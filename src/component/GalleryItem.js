@@ -18,7 +18,7 @@ function GalleryItem() {
             dispatch(addCats(response.data))
     }
 
-    // debugger
+    debugger
     const moreCats = () => {
         setPages(page + 10)
     }
