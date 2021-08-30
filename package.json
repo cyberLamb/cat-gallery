@@ -29,6 +29,7 @@
     "test": "env-cmd mocha -R spec react-scripts test",
     "eject": "react-scripts eject"
   },
+  
   "eslintConfig": {
     "extends": "react-app"
   },
