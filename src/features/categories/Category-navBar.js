@@ -3,11 +3,11 @@ import Typography from '@material-ui/core/Typography';
 import {MenuItem, MenuList} from "@material-ui/core";
 import {useSelector} from "react-redux";
 import {BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
-import GalleryItem from "./GalleryItem";
+import GalleryItem from "../gallery/GalleryItem";
 
-const NavbarMenu = () => {
+const CategoryNavBar = () => {
 
-    let categories = useSelector((state) => state.gallery.categories)
+    let categories = useSelector((state) => state.category.categories)
 
 
     return (
@@ -38,4 +38,4 @@ const NavbarMenu = () => {
     )
 }
 
-export default React.memo(NavbarMenu)
+export default React.memo(CategoryNavBar)

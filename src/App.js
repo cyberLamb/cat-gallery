@@ -1,7 +1,7 @@
 import React from 'react';
 import {createTheme, ThemeProvider} from "@material-ui/core";
 // import {Route} from "react-router";
-import Gallery from "./features/gallery/Gallery";
+import Gallery from "./component/Gallery";
 
 const theme = createTheme(({
     palette: {

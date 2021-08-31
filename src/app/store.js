@@ -1,12 +1,12 @@
 import { combineReducers, configureStore} from '@reduxjs/toolkit';
 import gallerySlice from "../features/gallery/gallerySlice";
-// import thunk from "redux-thunk";
-// import {composeWithDevTools} from "@reduxjs/toolkit/dist/devtoolsExtension";
+import categorySlice from "../features/categories/categorySlice";
 
-export const galleryReducers = combineReducers({
-    gallery: gallerySlice
+export const rootReducer = combineReducers({
+    gallery: gallerySlice,
+    category: categorySlice
+
 })
 export const store = configureStore({
-    reducer: galleryReducers,
-    // composeWithDevTools(applyMiddleware(thunk))
+    reducer: rootReducer,
 });
