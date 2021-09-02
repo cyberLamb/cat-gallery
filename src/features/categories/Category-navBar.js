@@ -1,9 +1,9 @@
 import React from 'react';
-import Typography from '@material-ui/core/Typography';
-import {MenuItem, MenuList} from "@material-ui/core";
+import {MenuList} from "@material-ui/core";
 import {useSelector} from "react-redux";
-import {BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
+import {BrowserRouter as Router, Route, NavLink, Switch, Link} from "react-router-dom";
 import GalleryItem from "../gallery/GalleryItem";
+import NavbarLink from "../../component/styleComponents/Link";
 
 const CategoryNavBar = () => {
 
@@ -11,30 +11,28 @@ const CategoryNavBar = () => {
 
 
     return (
-        <div>
-            <MenuList display="inline">
-                <Router>
+        <MenuList display="inline">
+            <Router>
+                <div style={{display: "flex"}}>
                     {
                         categories.map((item) => {
                             return (
-                                <MenuItem key={item.id}>
+
+                                <NavbarLink key={item.id} menu>
                                     <Link to={`/category/${item.id}`}>
-                                        <Typography variant="inherit" color="inherit"
-                                        >{item.name}
-                                        </Typography>
+                                        {item.name}
                                     </Link>
-                                </MenuItem>
+                                </NavbarLink>
+
                             )
                         })
                     }
-                    <Switch>
-                        <Route path="/category/:id" children={<GalleryItem/>}/>
-                    </Switch>
-
-                </Router>
-
-            </MenuList>
-        </div>
+                </div>
+                <Switch>
+                    <Route path="/category/:id" children={<GalleryItem/>}/>
+                </Switch>
+            </Router>
+        </MenuList>
     )
 }
 

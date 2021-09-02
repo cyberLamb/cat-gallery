@@ -3,13 +3,11 @@ import {getImages, getPages} from "./galleryAPI";
 const {createSlice} = require("@reduxjs/toolkit");
 
 
-
 export const gallerySlice = createSlice({
     name: 'gallery',
     initialState: {
         cats: [],
         status: null
-        // categories: []
     },
     reducers: {},
     extraReducers: {

@@ -1,32 +1,33 @@
-import React from 'react';
-import {createTheme, ThemeProvider} from "@material-ui/core";
-// import {Route} from "react-router";
-import Gallery from "./component/Gallery";
+import React, {useEffect} from 'react';
+import {ThemeProvider as MuiThemeProvider} from "@material-ui/core";
+import {ThemeProvider} from "@emotion/react"
+import CssBaseline from '@material-ui/core/CssBaseline'
+import CategoryNavBar from "./features/categories/Category-navBar";
+import theme from './theme'
+import {useDispatch} from "react-redux";
+import {getCategories} from "./features/categories/categorySlice";
 
-const theme = createTheme(({
-    palette: {
-        primary: {
-            light: '#606dbb',
-            main: '#3949ab',
-            dark: '#273377',
-            contrastText: '#fff'
-        },
-        typography: {
-            htmlFontSize: 17,
-            fontSize: 18,
 
-        }
-    }
-}))
+
+
 
 function App() {
 
+    const dispatch = useDispatch()
 
+    useEffect(() => {
+        // fetchCategories()
+        dispatch(getCategories())
+    }, [])
 
     return (
-        <ThemeProvider theme={theme}>
-            <Gallery />
-        </ThemeProvider>
+        <MuiThemeProvider theme={theme}>
+            <ThemeProvider theme={theme}>
+                <CssBaseline/>
+                <CategoryNavBar/>
+            </ThemeProvider>
+        </MuiThemeProvider>
+
     )
 }
 

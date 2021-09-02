@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from "react";
-import {Box, Button} from "@material-ui/core";
+import {Box} from "@material-ui/core";
+import ButtonWrapper from "../../component/styleComponents/Button";
 import {useDispatch, useSelector} from "react-redux";
 import {useParams} from "react-router";
 import {getImages, getPages} from "./galleryAPI";
+import Image from "../../component/styleComponents/Image";
 
 
 function GalleryItem() {
@@ -26,7 +28,7 @@ function GalleryItem() {
 
     useEffect(() => {
         // fetchMoreCats(id, page)
-        if (page > 10){
+        if (page > 10) {
             console.log(id, page)
             dispatch(getPages([id, page]))
         }
@@ -39,13 +41,11 @@ function GalleryItem() {
                 data.map((image) => {
                     // console.log(e)
                     return (
-                        <Box component="span" key={image.id + Math.random()}>
-                            <img src={image.url} style={{width: '150px', height: "150px"}} alt="something"/>
-                        </Box>
+                        <Image key={image.id + Math.random()} galleryImage src={image.url}/>
                     )
                 })
             }
-            <Button onClick={moreCats}>see more</Button>
+            <ButtonWrapper variant onClick={moreCats} text={'See More'}/>
         </div>
     )
 }
