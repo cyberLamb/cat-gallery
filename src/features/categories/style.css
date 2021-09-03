@@ -9,7 +9,6 @@
     justify-content: center;
     align-items: center;
 }
-
-.overlay {
-
+li a.is-active {
+    background-color: black
 }

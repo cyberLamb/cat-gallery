@@ -24,9 +24,6 @@ function GalleryItem() {
         dispatch(getImages(id))
     }, [id])
 
-    // useEffect(() => {
-    //     dispatch(getAllCategories(""))
-    // }, [id, page])
 
     useEffect(() => {
         // fetchMoreCats(id, page)

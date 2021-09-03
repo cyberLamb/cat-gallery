@@ -4,13 +4,6 @@ import styled from '@emotion/styled'
 import {Button} from "@material-ui/core";
 
 
-// const StyledButton = styled((Button),{
-//         backgroundColor: props =>  props.variant ? props.theme.palette.primary.light  : props.theme.palette.primary.dark
-//     }
-//     // [`:hover `]: {
-//     //
-//     // }
-// )
 const StyledButton = styled(Button)`
     border: 3px solid ${({variant,theme}) =>  !variant  ? theme.palette.primary.light  : theme.palette.primary.dark};
     ${({variant,theme}) => variant && "color:" + theme.palette.primary.dark};
@@ -19,7 +12,6 @@ const StyledButton = styled(Button)`
         background-color: ${({variant,theme}) =>  variant ? theme.palette.primary.dark  : theme.palette.primary.light};
         color: ${({variant,theme}) =>  variant ? theme.palette.common.white  : theme.palette.primary.light}
       }
-  
 `
 
 

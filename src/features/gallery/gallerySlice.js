@@ -27,4 +27,3 @@ export const gallerySlice = createSlice({
 
 export default gallerySlice.reducer
 
-// export const {addMoreCats} = gallerySlice.actions;
