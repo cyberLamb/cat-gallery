@@ -5,17 +5,30 @@ import styled from '@emotion/styled'
 
 
 const StyledImage = styled.img`
-    ${({galleryImage}) => galleryImage && "width: 400px"};
-    ${({galleryImage}) => galleryImage && "height: 400px"};
+    ${({galleryImage}) => galleryImage && "width: 200px"};
+    ${({galleryImage}) => galleryImage && "height: 200px"};
+    ${({galleryImage}) => galleryImage && "border-radius:  25px 0 25px 0"};
+     ${({galleryImage}) => galleryImage && "border: 2px solid transparent" };
+    ${({galleryImage}) => galleryImage && "box-shadow: none"};
+   
     margin: 10px 21px;
     object-fit: cover;
+    transition: .5s;
+    cursor: pointer;
+  
+  :hover {
+    ${({galleryImage}) => galleryImage && "border: 2px solid transparent"};
+    ${({galleryImage}) => galleryImage && "box-shadow: 1px 3px 10px #333"};
+
+  }
 
 `
 
 const Image = (props) => {
-    console.log(props)
+    console.log(props, "alll props")
     return (
         <StyledImage {...props}/>
+
     )
 }
 

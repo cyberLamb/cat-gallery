@@ -1,9 +1,8 @@
 import React, {useEffect, useState} from "react";
-import {Box} from "@material-ui/core";
 import ButtonWrapper from "../../component/styleComponents/Button";
 import {useDispatch, useSelector} from "react-redux";
 import {useParams} from "react-router";
-import {getImages, getPages} from "./galleryAPI";
+import { getImages, getPages} from "./galleryAPI";
 import Image from "../../component/styleComponents/Image";
 
 
@@ -23,8 +22,11 @@ function GalleryItem() {
 
     useEffect(() => {
         dispatch(getImages(id))
-
     }, [id])
+
+    // useEffect(() => {
+    //     dispatch(getAllCategories(""))
+    // }, [id, page])
 
     useEffect(() => {
         // fetchMoreCats(id, page)
@@ -32,7 +34,6 @@ function GalleryItem() {
             console.log(id, page)
             dispatch(getPages([id, page]))
         }
-
     }, [page])
 
     return (
@@ -41,7 +42,7 @@ function GalleryItem() {
                 data.map((image) => {
                     // console.log(e)
                     return (
-                        <Image key={image.id + Math.random()} galleryImage src={image.url}/>
+                        <Image key={image? image.id + Math.random() : 1 +Math.random()} galleryImage src={image.url}/>
                     )
                 })
             }

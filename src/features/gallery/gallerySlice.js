@@ -1,4 +1,4 @@
-import {getImages, getPages} from "./galleryAPI";
+import { getImages, getPages} from "./galleryAPI";
 
 const {createSlice} = require("@reduxjs/toolkit");
 
@@ -19,7 +19,7 @@ export const gallerySlice = createSlice({
             action.payload.map((e) => {
                 state.cats.push(e)
             })
-        },
+        }
     }
 
 });

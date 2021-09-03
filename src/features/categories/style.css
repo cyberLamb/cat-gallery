@@ -1,0 +1,15 @@
+.itemMain {
+    margin: 70px auto;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.navBar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+
+}
